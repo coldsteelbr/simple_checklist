@@ -12,8 +12,8 @@ import ru.romanbrazhnikov.simplechecklist.views.MainActivity;
 @Singleton
 @Component(
         modules = {
-                AppModule.class
-//                AnyModule.class
+                AppModule.class,
+                ObjectBoxModule.class
         })
 public interface AppComponent {
     void inject(MainActivity activity);
