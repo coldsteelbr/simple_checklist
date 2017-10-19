@@ -1,7 +1,9 @@
-package ru.romanbrazhnikov.simplechecklist;
+package ru.romanbrazhnikov.simplechecklist.views;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import ru.romanbrazhnikov.simplechecklist.R;
 
 public class MainActivity extends AppCompatActivity {
 
