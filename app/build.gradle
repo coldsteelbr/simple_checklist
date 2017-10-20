@@ -22,7 +22,7 @@ android {
         main {
             res.srcDirs = [
                     "src/main/res/app",
-                    "src/main/res/main"
+                    "src/main/res/todolist"
             ]
         }
     }
@@ -44,5 +44,6 @@ dependencies {
     // RecyclerView
     implementation 'com.android.support:recyclerview-v7:26.1.0'
 
-
+    // Design Support library
+    implementation 'com.android.support:design:26.1.0'
 }
