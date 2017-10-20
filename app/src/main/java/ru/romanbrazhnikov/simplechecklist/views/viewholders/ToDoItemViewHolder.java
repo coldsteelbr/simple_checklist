@@ -1,7 +1,7 @@
 package ru.romanbrazhnikov.simplechecklist.views.viewholders;
 
 import android.view.View;
-import android.widget.Switch;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import ru.romanbrazhnikov.simplechecklist.R;
@@ -14,17 +14,17 @@ import ru.romanbrazhnikov.simplechecklist.entities.ToDoItem;
 
 public class ToDoItemViewHolder extends BaseViewHolder<ToDoItem> {
     private TextView tvTaskToDo;
-    private Switch swIsDone;
+    private CheckBox chIsDone;
 
     public ToDoItemViewHolder(View itemView) {
         super(itemView);
         tvTaskToDo = itemView.findViewById(R.id.tv_task_todo);
-        swIsDone = itemView.findViewById(R.id.sw_is_done);
+        chIsDone = itemView.findViewById(R.id.ch_is_done);
     }
 
     @Override
     public void bindItem(ToDoItem item) {
         tvTaskToDo.setText(item.getTaskToDO());
-        swIsDone.setChecked(item.isDone());
+        chIsDone.setChecked(item.isDone());
     }
 }

@@ -22,6 +22,13 @@ public class ToDoListActivity extends BaseRecyclerViewActivity<ToDoItem, ToDoIte
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        /*
+        for (int i = 0; i < 15; i++) {
+            mToDoItemBox.put(new ToDoItem(false, "Sample task" + String.valueOf(i)));
+        }
+        */
+
     }
 
     @Override
