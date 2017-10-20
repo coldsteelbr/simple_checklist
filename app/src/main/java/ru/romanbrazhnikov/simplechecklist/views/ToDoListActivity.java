@@ -29,7 +29,7 @@ public class ToDoListActivity extends BaseRecyclerViewActivity<ToDoItem, ToDoIte
         mCommonRepository = CommonRepository.getInstance();
         ((CommonRepository) mCommonRepository).init(mToDoItemBox);
 
-        //*
+        /*
         for (int i = 0; i < 30; i++) {
             mToDoItemBox.put(new ToDoItem(false, "Sample task" + String.valueOf(i)));
         }
