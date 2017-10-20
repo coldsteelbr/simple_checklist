@@ -17,6 +17,6 @@ import ru.romanbrazhnikov.simplechecklist.views.ToDoListActivity;
         })
 public interface AppComponent {
     void inject(ToDoListActivity activity);
-    //void inject(AnyActivity activity);
-
+    //void inject(ICommonRepository repository);
+    //ICommonRepository repo();
 }

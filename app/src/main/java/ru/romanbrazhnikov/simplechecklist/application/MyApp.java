@@ -13,6 +13,7 @@ import ru.romanbrazhnikov.simplechecklist.dagger.ObjectBoxModule;
 
 public class MyApp extends Application {
     private AppComponent mAppComponent;
+    //private RepoSubComponent mRepoSubComponent;
 
     @Override
     public void onCreate() {
@@ -22,6 +23,13 @@ public class MyApp extends Application {
                 .appModule(new AppModule(this))
                 .objectBoxModule(new ObjectBoxModule(this))
                 .build();
+
+        /* TODO: SubComponent
+        mRepoSubComponent = DaggerRepoSubComponent.builder()
+                .appComponent(mAppComponent)
+                .commonRepositoryModule(new CommonRepositoryModule(new CommonRepository()))
+                .build();
+        */
     }
 
     public AppComponent getAppComponent() {

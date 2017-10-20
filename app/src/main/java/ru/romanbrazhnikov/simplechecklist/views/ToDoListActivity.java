@@ -8,26 +8,32 @@ import java.util.List;
 import javax.inject.Inject;
 
 import io.objectbox.Box;
-import io.objectbox.query.Query;
 import ru.romanbrazhnikov.simplechecklist.R;
 import ru.romanbrazhnikov.simplechecklist.base.views.BaseRecyclerViewActivity;
 import ru.romanbrazhnikov.simplechecklist.entities.ToDoItem;
+import ru.romanbrazhnikov.simplechecklist.repository.CommonRepository;
+import ru.romanbrazhnikov.simplechecklist.repository.ICommonRepository;
 import ru.romanbrazhnikov.simplechecklist.views.viewholders.ToDoItemViewHolder;
 
 public class ToDoListActivity extends BaseRecyclerViewActivity<ToDoItem, ToDoItemViewHolder> {
 
     @Inject
     Box<ToDoItem> mToDoItemBox;
+    ICommonRepository mCommonRepository;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        /*
-        for (int i = 0; i < 15; i++) {
+        // TODO: use sub component
+        mCommonRepository = CommonRepository.getInstance();
+        ((CommonRepository) mCommonRepository).init(mToDoItemBox);
+
+        //*
+        for (int i = 0; i < 30; i++) {
             mToDoItemBox.put(new ToDoItem(false, "Sample task" + String.valueOf(i)));
         }
-        */
+        //*/
 
     }
 
@@ -39,12 +45,7 @@ public class ToDoListActivity extends BaseRecyclerViewActivity<ToDoItem, ToDoIte
 
     // UPDATE UI EXAMPLE BASED ON OBJECT BOX
     private void updateUI() {
-        // getting items and refreshing list
-        Query<ToDoItem> queryAll
-                = mToDoItemBox.query()
-                .build();
-
-        List<ToDoItem> filteredRecords = queryAll.find();
+        List<ToDoItem> filteredRecords = mCommonRepository.getAllToDoItems();
 
         refreshList(filteredRecords);
     }
