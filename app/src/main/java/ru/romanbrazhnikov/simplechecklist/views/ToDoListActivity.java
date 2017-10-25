@@ -1,18 +1,23 @@
 package ru.romanbrazhnikov.simplechecklist.views;
 
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.view.View;
 
 import java.util.List;
 
 import javax.inject.Inject;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 import io.objectbox.Box;
 import ru.romanbrazhnikov.simplechecklist.R;
 import ru.romanbrazhnikov.simplechecklist.base.views.BaseRecyclerViewActivity;
 import ru.romanbrazhnikov.simplechecklist.entities.ToDoItem;
 import ru.romanbrazhnikov.simplechecklist.repository.CommonRepository;
 import ru.romanbrazhnikov.simplechecklist.repository.ICommonRepository;
+import ru.romanbrazhnikov.simplechecklist.taskeditor.view.TaskEditorActivity;
 import ru.romanbrazhnikov.simplechecklist.views.viewholders.ToDoItemViewHolder;
 
 public class ToDoListActivity extends BaseRecyclerViewActivity<ToDoItem, ToDoItemViewHolder> {
@@ -21,9 +26,14 @@ public class ToDoListActivity extends BaseRecyclerViewActivity<ToDoItem, ToDoIte
     Box<ToDoItem> mToDoItemBox;
     ICommonRepository mCommonRepository;
 
+    @BindView(R.id.fab_add_task)
+    FloatingActionButton fabAddTask;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        ButterKnife.bind(this);
 
         // TODO: use sub component
         mCommonRepository = CommonRepository.getInstance();
@@ -35,6 +45,11 @@ public class ToDoListActivity extends BaseRecyclerViewActivity<ToDoItem, ToDoIte
         }
         //*/
 
+    }
+
+    @OnClick(R.id.fab_add_task)
+    protected void fabAddTaskClick() {
+        TaskEditorActivity.startNewActivity(this);
     }
 
     @Override

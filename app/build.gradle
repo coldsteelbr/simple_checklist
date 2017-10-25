@@ -22,7 +22,9 @@ android {
         main {
             res.srcDirs = [
                     "src/main/res/app",
-                    "src/main/res/todolist"
+                    "src/main/res/todolist",
+                    "src/main/res/taskeditor"
+
             ]
         }
     }
@@ -43,6 +45,10 @@ dependencies {
 
     // RecyclerView
     implementation 'com.android.support:recyclerview-v7:26.1.0'
+
+    // ButterKnife
+    compile 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 
     // Design Support library
     implementation 'com.android.support:design:26.1.0'

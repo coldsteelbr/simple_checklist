@@ -3,6 +3,7 @@ package ru.romanbrazhnikov.simplechecklist.dagger;
 import javax.inject.Singleton;
 
 import dagger.Component;
+import ru.romanbrazhnikov.simplechecklist.taskeditor.view.TaskEditorActivity;
 import ru.romanbrazhnikov.simplechecklist.views.ToDoListActivity;
 
 /**
@@ -17,6 +18,7 @@ import ru.romanbrazhnikov.simplechecklist.views.ToDoListActivity;
         })
 public interface AppComponent {
     void inject(ToDoListActivity activity);
+    void inject(TaskEditorActivity activity);
     //void inject(ICommonRepository repository);
     //ICommonRepository repo();
 }

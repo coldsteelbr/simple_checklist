@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Simple Checklist</string>
+    <string name="task">Task</string>
 </resources>
